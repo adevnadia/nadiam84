@@ -102,8 +102,8 @@
 
             <div class="aui-c-head">
                 <h2 class="title">Build your team</h2>
-                <div class="aui-c-slider">
-                    <ul ng-attr-style="width: {{62*((model.team.length > 6 ? 6 : model.team.length) + 1) + 'px'}};">
+                <div class="aui-c-slider" ng-attr-style="{{model.team.length > 6 ? 'overflow:auto;': ''}}">
+                    <ul ng-attr-style="width: {{62*(model.team.length + 1) + 'px'}};">
                         <li>
                             <span class="aui-avatar aui-avatar-project aui-avatar-large animated zoomIn">
                                 <span class="aui-avatar-inner">
@@ -112,7 +112,7 @@
 
                             </span>
                         </li>
-                        <li ng-repeat="mate in model.team | limitTo:6 track by $index" >
+                        <li ng-repeat="mate in model.team track by $index" >
                             <span class="aui-avatar aui-avatar-project aui-avatar-large  animated zoomInAui"
                                 ng-class="{'pending' : mate.pending}"
                                 ng-click="toggleMate(mate)">
@@ -134,7 +134,7 @@
             <div class="aui-c-search-res">
                 <ul>
                     <li ng-repeat="mate in model.people  | filter:ui.searchTeamMate | limitTo:40 track by $index" ng-class="{'pending' : mate.pending}"
-                        ng-hide="mate.isChosen && !mate.justAdded && !mate.pending">
+                        ng-if="!(mate.isChosen && !mate.justAdded && !mate.pending)">
                         <span class="aui-avatar aui-avatar-project aui-avatar-large" ng-click="toggleMate(mate)">
                             <span class="aui-avatar-inner">
                                 <img ng-src="{{mate.photo}}">
