@@ -262,6 +262,14 @@ img {
   height: 80%;
   top: 10%;
 }
+.aui-c-popup .body:after {
+  border-bottom: 1px solid #eee;
+  position: absolute;
+  bottom: 110px;
+  left: 0px;
+  right: 0px;
+  content: " ";
+}
 .aui-c-popup .body .close-but {
   position: absolute;
   top: 10px;
@@ -311,6 +319,7 @@ img {
   height: 100%;
   padding-right: 20px;
   margin-right: -20px;
+  position: relative;
 }
 .aui-c-search-res ul {
   margin: 0px 0px;
