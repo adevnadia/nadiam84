@@ -1,0 +1,6 @@
+/.idea
+/.tmp
+/www
+/node_modules
+/static/libs
+errors.log

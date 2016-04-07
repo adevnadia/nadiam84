@@ -1,0 +1,397 @@
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+a {
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+img {
+  vertical-align: middle;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+#content {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.aui-sidebar {
+  width: 30%;
+  display: table-cell;
+  height: 100%;
+}
+.aui-sidebar .aui-avatar-project:before {
+  border-color: #fff;
+}
+.aui-page-panel {
+  display: table-cell;
+  height: 100%;
+}
+.aui-c-addbutton {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+  margin: -8px 0px 0px 0px;
+}
+.aui-c-popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  overflow: auto;
+  padding: 40px 0;
+}
+.aui-c-popup .body {
+  width: 560px;
+  left: 50%;
+  margin-left: -270px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 999;
+  padding: 242px 40px 110px 40px;
+  height: 80%;
+}
+.aui-c-popup .shadow {
+  background: #000;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.aui-c-search input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 0;
+  vertical-align: baseline;
+  color: #333;
+}
+.aui-c-head {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+}
+.aui-c-head .title {
+  margin: 0px 0px 30px 0px;
+  padding: 0;
+  font-size: 26px;
+  line-height: 26px;
+  color: #333;
+  text-align: center;
+}
+.aui-c-search-res {
+  overflow: auto;
+  height: 100%;
+  padding-right: 20px;
+  margin-right: -20px;
+}
+.aui-c-search-res ul {
+  margin: 0px 0px;
+  padding: 0;
+  list-style-type: none;
+}
+.aui-c-search-res ul li {
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+}
+.aui-c-search-res ul li:first-child {
+  border-top: 0;
+}
+.aui-c-search-res p {
+  font-size: 13px;
+  color: #aaa;
+  margin: 0;
+}
+.aui-c-search-res h3 {
+  font-size: 15px;
+  line-height: 20px;
+  margin: 3px 0 6px 0;
+}
+.aui-c-search-res .aui-avatar {
+  vertical-align: middle;
+  position: relative;
+  float: left;
+  margin: 0 20px 0px 0px;
+}
+.aui-c-search-res .aui-i-resico {
+  float: right;
+  width: 34px;
+  height: 34px;
+  background: url(../images/add.png) 0 0 no-repeat;
+  cursor: pointer;
+  margin-top: 7px;
+}
+.aui-c-search-res .aui-i-resico.chosen {
+  background-image: url(../images/tick.png);
+}
+.aui-c-search-res .aui-i-pending {
+  float: right;
+}
+.aui-c-search-res .aui-i-pending h4 {
+  margin: 0 0 5px 0;
+}
+.aui-c-search-res .aui-i-pending p {
+  color: #3572b0;
+  margin: 0;
+}
+.aui-avatar.pending img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.aui-avatar .chosen {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 22px;
+  height: 22px;
+  background: url(../images/Tick-smal.png) 0 0 no-repeat;
+}
+.aui-c-slider ul {
+  margin: 10px 0 30px 0;
+  list-style-type: none;
+  text-align: right;
+}
+.aui-c-slider ul li {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 12px;
+}
+.aui-c-addedpeople ul {
+  padding: 0;
+  margin: 0 0 0 10px;
+  list-style-type: none;
+}
+.aui-c-addedpeople ul li {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+}
+.aui-c-invitebut {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  height: 50px;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 50px;
+  font-weigth: 100;
+  padding: 0 35px;
+}

@@ -1,0 +1,20 @@
+<div class="aui-c-popup" ng-show="ui.openPopup">
+    <div class="shadow"></div>
+    <div class="body">
+        <h1>Your team</h1>
+
+        <div class="aui-c-slider">
+
+        </div>
+
+        <div class="aui-c-search">
+            <input type="text" ng-model="ui.searchTeamMate">
+        </div>
+
+        <div class="aui-c-search-res">
+            <ul>
+                <li ng-repeat="mate in model.people">{{mate.name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
