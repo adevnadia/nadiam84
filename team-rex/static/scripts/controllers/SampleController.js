@@ -8,7 +8,7 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
     $scope.ui = {};
     $scope.ui.search = "";
 
-    $scope.ui.openPopup = false;
+    $scope.ui.openPopup = true;
 
     $scope.closePopup = function () {
         $scope.ui.openPopup = false;
@@ -38,6 +38,9 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
         if (mate) {
             mate.isChosen = true;
             mate.justAdded = true;
+            if (mate.email) {
+                emailCount++;
+            }
             if (mate.pending) {
                 mate.pending = false;
                 mate.rePending = true;
@@ -116,6 +119,35 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
      for (var i=0; i<$scope.model.team.length; i++) {
      $scope.model.savedTeam[i].justAdded = false;
      }*/
+
+    var emailRegexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+     $scope.$watch('ui.searchTeamMate', function(val) {
+        if (val && emailRegexp.test(val)) {
+            addEmailToTheTeam(val);
+        }
+     });
+
+     var emailCount = 0;
+     function addEmailToTheTeam(email) {
+        var team = $scope.model.people;
+        var emailinteam = findCurEmail(emailCount, team);
+
+         if (!emailinteam) {
+             team.push({id: 'email_id_' + emailCount, email: email, photo: "static/images/email1.png"});
+         } else {
+             emailinteam["email"] = email;
+         }
+     }
+
+     function findCurEmail(emailCount, team) {
+        for (var i=0; i<team.length; i++) {
+            if (team[i].id == 'email_id_' + emailCount) {
+                return team[i];
+            }
+        }
+
+        return undefined;
+     }
 
     function findById(id) {
         for (var i = 0; i < $scope.model.people.length; i++) {

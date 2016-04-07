@@ -99,6 +99,7 @@
     <div class="aui-c-popup" ng-show="ui.openPopup">
         <div class="shadow" ng-click="closePopup()"></div>
         <div class="body  animated slideInLeft">
+            <div class="close-but" ng-click="closePopup()"></div>
 
             <div class="aui-c-head">
                 <h2 class="title">Build your team</h2>
@@ -144,8 +145,9 @@
                         <span class="aui-i-resico" ng-class="{'chosen' : mate.isChosen}" ng-click="toggleMate(mate)" ng-show="!mate.pending"
                         ></span>
                         <span class="aui-i-pending" ng-show="mate.pending"><h4>Invite sent</h4> <p ng-click="chooseMate(mate.id)">Resend</p></span>
-                        <h3>{{mate.name}}</h3>
-                        <p>{{mate.team}}</p>
+                        <h3 ng-if="!mate.email">{{mate.name}}</h3>
+                        <p ng-if="!mate.email">{{mate.team}}</p>
+                        <h3 ng-if="mate.email" class="email">{{mate.email}}</h3>
                     </li>
                 </ul>
             </div>

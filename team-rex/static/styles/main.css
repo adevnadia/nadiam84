@@ -262,6 +262,15 @@ img {
   height: 80%;
   top: 10%;
 }
+.aui-c-popup .body .close-but {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  background: url(../images/close.png) 50% 50% no-repeat;
+  cursor: pointer;
+}
 .aui-c-popup .shadow {
   background: #000;
   opacity: 0.5;
@@ -273,7 +282,7 @@ img {
 }
 .aui-c-search input {
   width: 100%;
-  padding: 12px 20px;
+  padding: 12px 20px 12px 40px;
   border: 1px solid #dcdcdc;
   border-radius: 6px;
   box-sizing: border-box;
@@ -281,6 +290,7 @@ img {
   margin: 0;
   vertical-align: baseline;
   color: #333;
+  background: url(../images/Search.png) 14px 16px no-repeat;
 }
 .aui-c-head {
   position: absolute;
@@ -324,6 +334,9 @@ img {
   font-size: 15px;
   line-height: 15px;
   margin: 5px 0 4px 0;
+}
+.aui-c-search-res h3.email {
+  margin-top: 15px;
 }
 .aui-c-search-res .aui-avatar {
   vertical-align: middle;
@@ -376,7 +389,7 @@ img {
   text-align: left;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  height: 58px;
+  height: 59px;
   overflow: hidden;
   font-size: 0;
   line-height: 0;
