@@ -8,7 +8,7 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
     $scope.ui = {};
     $scope.ui.search = "";
 
-    $scope.ui.openPopup = true;
+    $scope.ui.openPopup = false;
 
     $scope.closePopup = function () {
         $scope.ui.openPopup = false;
