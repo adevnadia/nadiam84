@@ -14,7 +14,11 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
         $scope.ui.openPopup = false;
         $scope.ui.searchTeamMate = "";
         $('body').css('overflow', 'auto');
-
+        
+        for (var i = 0; i < $scope.model.team.length; i++) {
+            $scope.model.team[i].justAdded = false;
+            $scope.model.team[i].isChosen = false;
+        }
         $timeout(function () {
             setRandom();
         }, 400)
@@ -24,9 +28,7 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
         $scope.ui.openPopup = true;
         $scope.ui.searchTeamMate = "";
         $scope.model.team = [].concat($scope.model.savedTeam);
-        for (var i = 0; i < $scope.model.team.length; i++) {
-            $scope.model.team[i].justAdded = false;
-        }
+
         stopRandom();
         $('body').css('overflow', 'hidden');
     };

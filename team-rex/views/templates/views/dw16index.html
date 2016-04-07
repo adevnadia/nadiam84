@@ -140,6 +140,7 @@
                                 <img ng-src="{{mate.photo}}">
                             </span>
                         </span>
+
                         <span class="aui-i-resico" ng-class="{'chosen' : mate.isChosen}" ng-click="toggleMate(mate)" ng-show="!mate.pending"
                         ></span>
                         <span class="aui-i-pending" ng-show="mate.pending"><h4>Invite sent</h4> <p ng-click="chooseMate(mate.id)">Resend</p></span>
