@@ -272,12 +272,13 @@ img {
 }
 .aui-c-popup .body .close-but {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 30px;
+  right: 30px;
   width: 35px;
   height: 35px;
   background: url(../images/close.png) 50% 50% no-repeat;
   cursor: pointer;
+  z-index: 9999;
 }
 .aui-c-popup .shadow {
   background: #000;

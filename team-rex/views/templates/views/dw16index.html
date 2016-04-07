@@ -98,7 +98,7 @@
     <!-- popup -->
     <div class="aui-c-popup" ng-show="ui.openPopup">
         <div class="shadow" ng-click="closePopup()"></div>
-        <div class="body  animated slideInLeft">
+        <div class="body  animated slideInLeft" ng-class="{'slideOutRightAui' : ui.closePopupAnimation}">
             <div class="close-but" ng-click="closePopup()"></div>
 
             <div class="aui-c-head">
@@ -106,7 +106,7 @@
                 <div class="aui-c-slider" ng-attr-style="{{model.team.length > 6 ? 'overflow:auto;': ''}}">
                     <ul ng-attr-style="width: {{62*(model.team.length + 1) + 'px'}};">
                         <li>
-                            <span class="aui-avatar aui-avatar-project aui-avatar-large animated zoomIn">
+                            <span class="aui-avatar aui-avatar-project aui-avatar-large animated zoomInAui">
                                 <span class="aui-avatar-inner">
                                     <img ng-src="static/images/kevin.jpg">
                                 </span>
@@ -122,7 +122,7 @@
                                 </span>
 
                             </span>
-                            <span class="aui-avatar-chosen animated zoomIn zoomInAui" ng-show="mate.justAdded"></span>
+                            <span class="aui-avatar-chosen animated zoomInAuiFast" ng-show="mate.justAdded"></span>
                         </li>
                     </ul>
                 </div>

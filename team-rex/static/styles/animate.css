@@ -2755,6 +2755,37 @@
   animation-name: zoomInAui;
 }
 
+@-webkit-keyframes zoomInAuiFast {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.8,.8,.8);
+    transform: scale3d(.8,.8,.8);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomInAuiFast {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.8,.8,.8);
+    transform: scale3d(.8,.8,.8);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.zoomInAuiFast {
+  -webkit-animation-name: zoomInAuiFast;
+  animation-name: zoomInAuiFast;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+}
+
 @-webkit-keyframes zoomInDown {
   from {
     opacity: 0;
@@ -3335,6 +3366,37 @@
 .slideOutRight {
   -webkit-animation-name: slideOutRight;
   animation-name: slideOutRight;
+}
+
+@-webkit-keyframes slideOutRightAui {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(200%, 0, 0);
+    transform: translate3d(200%, 0, 0);
+  }
+}
+
+@keyframes slideOutRightAui {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(200%, 0, 0);
+    transform: translate3d(200%, 0, 0);
+  }
+}
+
+.slideOutRightAui {
+  -webkit-animation-name: slideOutRightAui;
+  animation-name: slideOutRightAui;
 }
 
 @-webkit-keyframes slideOutUp {

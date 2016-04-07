@@ -9,19 +9,23 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
     $scope.ui.search = "";
 
     $scope.ui.openPopup = false;
-
+    $scope.ui.closePopupAnimation = false;
+    
     $scope.closePopup = function () {
-        $scope.ui.openPopup = false;
-        $scope.ui.searchTeamMate = "";
-        $('body').css('overflow', 'auto');
-        
-        for (var i = 0; i < $scope.model.team.length; i++) {
-            $scope.model.team[i].justAdded = false;
-            $scope.model.team[i].isChosen = false;
-        }
-        $timeout(function () {
+        $scope.ui.closePopupAnimation = true;
+        $timeout(function() {
+            $scope.ui.closePopupAnimation = false;
+            $scope.ui.openPopup = false;
+            $scope.ui.searchTeamMate = "";
+            $('body').css('overflow', 'auto');
+
+            for (var i = 0; i < $scope.model.team.length; i++) {
+                $scope.model.team[i].justAdded = false;
+                $scope.model.team[i].isChosen = false;
+            }
+
             setRandom();
-        }, 400)
+        }, 800);
     };
 
     $scope.openPopup = function () {
