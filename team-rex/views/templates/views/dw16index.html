@@ -103,7 +103,7 @@
             <div class="aui-c-head">
                 <h2 class="title">Build your team</h2>
                 <div class="aui-c-slider">
-                    <ul>
+                    <ul ng-attr-style="width: {{62*((model.team.length > 6 ? 6 : model.team.length) + 1) + 'px'}};">
                         <li>
                             <span class="aui-avatar aui-avatar-project aui-avatar-large animated zoomIn">
                                 <span class="aui-avatar-inner">
@@ -112,22 +112,22 @@
 
                             </span>
                         </li>
-                        <li ng-repeat="mate in model.team | limitTo:10 track by $index ">
-                            <span class="aui-avatar aui-avatar-project aui-avatar-large animated zoomIn"
-                                ng-class="{'pending' : mate.pending, 'chosen': mate.isChosen}"
+                        <li ng-repeat="mate in model.team | limitTo:6 track by $index" >
+                            <span class="aui-avatar aui-avatar-project aui-avatar-large  animated zoomInAui"
+                                ng-class="{'pending' : mate.pending}"
                                 ng-click="toggleMate(mate)">
                                 <span class="aui-avatar-inner">
                                     <img ng-src="{{mate.photo}}">
                                 </span>
-                                <span class="chosen animated zoomIn" ng-show="mate.justAdded"></span>
-                            </span>
 
+                            </span>
+                            <span class="aui-avatar-chosen animated zoomIn zoomInAui" ng-show="mate.justAdded"></span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="aui-c-search">
-                    <input class="text" type="text" id="text-input" name="text-input" placeholder="Invite some team members"  ng-model="ui.searchTeamMate">
+                    <input class="text" type="text" id="text-input" name="text-input" placeholder="Invite some team members..."  ng-model="ui.searchTeamMate">
                 </div>
             </div>
 
@@ -142,7 +142,7 @@
                         </span>
                         <span class="aui-i-resico" ng-class="{'chosen' : mate.isChosen}" ng-click="toggleMate(mate)" ng-show="!mate.pending"
                         ></span>
-                        <span class="aui-i-pending" ng-show="mate.pending"><h4>Invite sent</h4> <p>resend</p></span>
+                        <span class="aui-i-pending" ng-show="mate.pending"><h4>Invite sent</h4> <p ng-click="chooseMate(mate.id)">Resend</p></span>
                         <h3>{{mate.name}}</h3>
                         <p>{{mate.team}}</p>
                     </li>

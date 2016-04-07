@@ -222,7 +222,7 @@ img {
   height: 100%;
 }
 .aui-sidebar {
-  width: 30%;
+  width: 300px;
   display: table-cell;
   height: 100%;
 }
@@ -232,6 +232,7 @@ img {
 .aui-page-panel {
   display: table-cell;
   height: 100%;
+  width: auto !important;
 }
 .aui-c-addbutton {
   float: right;
@@ -247,7 +248,7 @@ img {
   left: 0;
   z-index: 999;
   overflow: auto;
-  padding: 40px 0;
+  padding: 0px 0;
 }
 .aui-c-popup .body {
   width: 560px;
@@ -259,6 +260,7 @@ img {
   z-index: 999;
   padding: 242px 40px 110px 40px;
   height: 80%;
+  top: 10%;
 }
 .aui-c-popup .shadow {
   background: #000;
@@ -319,8 +321,8 @@ img {
 }
 .aui-c-search-res h3 {
   font-size: 15px;
-  line-height: 20px;
-  margin: 3px 0 6px 0;
+  line-height: 15px;
+  margin: 5px 0 4px 0;
 }
 .aui-c-search-res .aui-avatar {
   vertical-align: middle;
@@ -341,9 +343,11 @@ img {
 }
 .aui-c-search-res .aui-i-pending {
   float: right;
+  text-align: right;
 }
 .aui-c-search-res .aui-i-pending h4 {
   margin: 0 0 5px 0;
+  font-weight: normal;
 }
 .aui-c-search-res .aui-i-pending p {
   color: #3572b0;
@@ -356,7 +360,7 @@ img {
   -ms-filter: grayscale(100%);
   filter: grayscale(100%);
 }
-.aui-avatar .chosen {
+.aui-avatar-chosen {
   position: absolute;
   top: -5px;
   right: -5px;
@@ -365,14 +369,30 @@ img {
   background: url(../images/Tick-smal.png) 0 0 no-repeat;
 }
 .aui-c-slider ul {
-  margin: 10px 0 30px 0;
+  padding: 10px 0 0px 0;
+  margin: 0 auto 30px auto;
   list-style-type: none;
-  text-align: right;
+  text-align: left;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  height: 58px;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
 }
 .aui-c-slider ul li {
   display: inline-block;
   vertical-align: top;
-  margin: 0 12px;
+  margin: 0 6px;
+  -webkit-animation-delay: 0.6s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 0.6s;
+  position: relative;
+}
+.aui-c-slider ul li .aui-avatar-chosen {
+  -webkit-animation-delay: 0.9s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 0.9s;
 }
 .aui-c-addedpeople ul {
   padding: 0;
@@ -392,6 +412,6 @@ img {
   border-radius: 6px;
   font-size: 16px;
   line-height: 50px;
-  font-weigth: 100;
+  font-weight: normal !important;
   padding: 0 35px;
 }
