@@ -1,0 +1,14 @@
+{
+  "name": "aui-dist",
+  "version": "5.10.0",
+  "_release": "5.10.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "5.10.0",
+    "commit": "73ba1eb72e8c6753ac4e81c9a89644e8ca888bb8"
+  },
+  "_source": "https://bitbucket.org/atlassian/aui-dist.git",
+  "_target": "^5.10.0",
+  "_originalSource": "https://bitbucket.org/atlassian/aui-dist.git",
+  "_direct": true
+}
