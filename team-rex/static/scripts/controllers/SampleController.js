@@ -1,8 +1,6 @@
 'use strict';
 
 app.controller('SampleController', ['$scope', '$timeout', function ($scope, $timeout) {
-    $scope.test = "dw 2016 start!!!";
-
     $scope.toggleError = false;
 
     $scope.ui = {};
@@ -10,10 +8,10 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
 
     $scope.ui.openPopup = false;
     $scope.ui.closePopupAnimation = false;
-    
+
     $scope.closePopup = function () {
         $scope.ui.closePopupAnimation = true;
-        $timeout(function() {
+        $timeout(function () {
             $scope.ui.closePopupAnimation = false;
             $scope.ui.openPopup = false;
             $scope.ui.searchTeamMate = "";
@@ -85,73 +83,67 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
     $scope.model = {};
 
     $scope.model.people = [
-        {id: 1, name: "Matt", team: "AUI", photo: "static/images/Alana.png"},
-        {id: 2, name: "Jake", team: "JIRA", photo: "static/images/Cassie.png"},
-        {id: 3, name: "Felix", team: "Bitbucket", photo: "static/images/Alana.png"},
-        {id: 4, name: "Nadia", team: "Bitbucket", photo: "static/images/Emma.png"},
-        {id: 5, name: "Lucy", team: "Bitbucket", photo: "static/images/Harvey.png"},
-        {id: 6, name: "Helena", team: "AUI", photo: "static/images/jennifer.jpg"},
-        {id: 7, name: "Bekky", team: "JIRA", photo: "static/images/Alana.png"},
-        {id: 8, name: "Solomon", team: "JIRA", photo: "static/images/kevin.jpg"},
-        {id: 9, name: "Stiven", team: "JIRA", photo: "static/images/max.png"},
-        {id: 10, name: "Rex", team: "AUI", photo: "static/images/mitch.jpg"},
-        {id: 11, name: "Matt1", team: "AUI", photo: "static/images/ryan.png"},
-        {id: 12, name: "Jake1", team: "JIRA", photo: "static/images/Will.png"},
-        {id: 13, name: "Felix1", team: "Bitbucket", photo: "static/images/Cassie.png"},
-        {id: 14, name: "Nadia1", team: "Bitbucket", photo: "static/images/Will.png"},
-        {id: 15, name: "Lucy1", team: "Bitbucket", photo: "static/images/kevin.jpg"},
-        {id: 16, name: "Helena1", team: "AUI", photo: "static/images/ryan.png"},
-        {id: 17, name: "Bekky1", team: "JIRA", photo: "static/images/Alana.png"},
-        {id: 18, name: "Solomon1", team: "JIRA", photo: "static/images/Harvey.png"},
-        {id: 19, name: "Stiven1", team: "JIRA", photo: "static/images/Emma.png"},
-        {id: 20, name: "Re1x", team: "AUI", photo: "static/images/kevin.jpg"}
+        {id: 1, name: "Alex Riegelman", team: "Senior UX Designer", photo: "static/images/avatars/alex.png"},
+        {id: 2, name: "Zaki Salleh", team: "UX Designer", photo: "static/images/avatars/zaki.png"},
+        {id: 3, name: "Jurgen Spangl", team: "Head of things and stuff", photo: "static/images/avatars/jurgen.png"},
+        {id: 3, name: "Becc Roach", team: "Senior UX Designer", photo: "static/images/avatars/becc.jpg"},
+        {id: 4, name: "Andrew McKay", team: "Designer", photo: "static/images/avatars/andrew.jpeg"},
+        {id: 5, name: "Becky Todd", team: "Senior Technical Writer", photo: "static/images/avatars/becky.png"},
+        {id: 6, name: "Dave Meyer", team: "Product Manager", photo: "static/images/avatars/dave.jpg"},
+        {id: 7, name: "James Cooke", team: "JIRA SW Design Team Lead", photo: "static/images/avatars/jamesC.jpg"},
+        {id: 8, name: "James Rotanson", team: "Grad Designer", photo: "static/images/avatars/jamesR.jpg"},
+        {id: 9, name: "James Navin", team: "Senior Developer", photo: "static/images/avatars/jamesN.jpg"},
+        {id: 10, name: "James Bryant", team: "Senior Designer for JIRA Software", photo: "static/images/avatars/jamesB.png"},
+        {id: 11, name: "James Richards", team: "Senior Support Engineer", photo: "static/images/avatars/jamesR1.png"},
+        {id: 12, name: "James Russell", team: "Developer", photo: "static/images/avatars/JamesR2.png"},
+        {id: 13, name: "Ben Crothers", team: "Fabulous", photo: "static/images/avatars/ben.png"},
+        {id: 14, name: "Daniel Franz", team: "Principal Product Manager", photo: "static/images/avatars/daniel.png"},
+        {id: 15, name: "Christopher Nortje", team: "Development Team Lead", photo: "static/images/avatars/christopher.png"},
+        {id: 16, name: "Brett Flower", team: "Design team lead (JIRA Platform/Core)", photo: "static/images/avatars/brett.png"},
+        {id: 17, name: "Warren Thompson", team: "Technical something something", photo: "static/images/avatars/warren.JPG"},
+        {id: 18, name: "Jaiden Ashmore", team: "Developer", photo: "static/images/avatars/jaiden.jpg"},
+        {id: 19, name: "Daniel Kerris", team: "Design Enthusiast", photo: "static/images/avatars/danielK.jpg"},
+        {
+            id: 20,
+            name: "Georgie Bottomly",
+            team: "JIRA UX Research, Level 8/ 341 George St",
+            photo: "static/images/avatars/georgie.jpg"
+        }
     ];
 
     $scope.model.team = [];
 
     $scope.model.savedTeam = [];
 
-    /*$scope.chooseMate(1);
-     $scope.chooseMate(5);
-     $scope.chooseMate(6);
-     $scope.saveTeamMates();
-
-     for (var i=0; i<$scope.model.savedTeam.length; i++) {
-     $scope.model.savedTeam[i].pending = false;
-     }
-
-     for (var i=0; i<$scope.model.team.length; i++) {
-     $scope.model.savedTeam[i].justAdded = false;
-     }*/
-
     var emailRegexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-     $scope.$watch('ui.searchTeamMate', function(val) {
+    $scope.$watch('ui.searchTeamMate', function (val) {
         if (val && emailRegexp.test(val)) {
             addEmailToTheTeam(val);
         }
-     });
+    });
 
-     var emailCount = 0;
-     function addEmailToTheTeam(email) {
+    var emailCount = 0;
+
+    function addEmailToTheTeam(email) {
         var team = $scope.model.people;
         var emailinteam = findCurEmail(emailCount, team);
 
-         if (!emailinteam) {
-             team.push({id: 'email_id_' + emailCount, email: email, photo: "static/images/email1.png"});
-         } else {
-             emailinteam["email"] = email;
-         }
-     }
+        if (!emailinteam) {
+            team.push({id: 'email_id_' + emailCount, email: email, photo: "static/images/email1.png"});
+        } else {
+            emailinteam["email"] = email;
+        }
+    }
 
-     function findCurEmail(emailCount, team) {
-        for (var i=0; i<team.length; i++) {
+    function findCurEmail(emailCount, team) {
+        for (var i = 0; i < team.length; i++) {
             if (team[i].id == 'email_id_' + emailCount) {
                 return team[i];
             }
         }
 
         return undefined;
-     }
+    }
 
     function findById(id) {
         for (var i = 0; i < $scope.model.people.length; i++) {
