@@ -29,14 +29,25 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
     $scope.openPopup = function () {
         $scope.ui.openPopup = true;
         $scope.ui.searchTeamMate = "";
-        $scope.model.team = [].concat($scope.model.savedTeam);
+        $scope.model.team = [].concat(angular.copy($scope.model.savedTeam));
 
+        for (var i=0; i<$scope.model.team.length; i++) {
+            var mate = findById($scope.model.team[i].id);
+            if (mate) {
+                mate.pending = $scope.model.team[i].pending;
+                if (!mate.pending) {
+                    mate.isChosen = true;
+                    mate.justAdded = false;
+                }
+            }
+        }
         stopRandom();
         $('body').css('overflow', 'hidden');
     };
 
-    $scope.chooseMate = function (id) {
+    $scope.chooseMate = function (id, isIco) {
         var mate = findById(id);
+        if (mate && mate.pending && isIco) return;
         if (mate) {
             mate.isChosen = true;
             mate.justAdded = true;
@@ -52,8 +63,9 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
         }
     };
 
-    $scope.destroyMate = function (id) {
+    $scope.destroyMate = function (id, isIco) {
         var mate = findById(id);
+        if (mate && mate.pending && isIco) return;
         if (mate && mate.justAdded && !mate.rePending) {
             mate.isChosen = false;
             mate.justAdded = false;
@@ -61,21 +73,23 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
         }
     };
 
-    $scope.toggleMate = function (mate) {
+    $scope.toggleMate = function (mate, isIco) {
         if (mate.isChosen) {
-            $scope.destroyMate(mate.id);
+            $scope.destroyMate(mate.id, isIco);
         } else {
-            $scope.chooseMate(mate.id)
+            $scope.chooseMate(mate.id, isIco)
         }
     };
 
     $scope.saveTeamMates = function () {
-        $scope.model.savedTeam = [].concat($scope.model.team);
+        $scope.model.savedTeam = [].concat(angular.copy($scope.model.team));
         for (var i = 0; i < $scope.model.savedTeam.length; i++) {
             if ($scope.model.savedTeam[i].justAdded) {
                 $scope.model.savedTeam[i].pending = true;
             }
             $scope.model.savedTeam[i].justAdded = false;
+            $scope.model.savedTeam[i].isChosen = false;
+            $scope.model.savedTeam[i].rePending = false;
         }
         $scope.closePopup();
     };

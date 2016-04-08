@@ -135,12 +135,11 @@
                 <ul>
                     <li ng-repeat="mate in model.people  | filter:{name: ui.searchTeamMate} | limitTo:40 track by $index" ng-class="{'pending' : mate.pending}"
                         ng-if="!(mate.isChosen && !mate.justAdded && !mate.pending)">
-                        <span class="aui-avatar aui-avatar-project aui-avatar-large" ng-click="toggleMate(mate)">
+                        <span class="aui-avatar aui-avatar-project aui-avatar-large" ng-click="toggleMate(mate, true)">
                             <span class="aui-avatar-inner">
                                 <img ng-src="{{mate.photo}}">
                             </span>
                         </span>
-
                         <span class="aui-i-resico" ng-class="{'chosen' : mate.isChosen}" ng-click="toggleMate(mate)" ng-show="!mate.pending"
                         ></span>
                         <span class="aui-i-pending" ng-show="mate.pending"><h4>Invite sent</h4> <p ng-click="chooseMate(mate.id)">Resend</p></span>
