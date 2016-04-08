@@ -95,7 +95,7 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
         {id: 9, name: "James Navin", team: "Senior Developer", photo: "static/images/avatars/jamesN.jpg"},
         {id: 10, name: "James Bryant", team: "Senior Designer for JIRA Software", photo: "static/images/avatars/jamesB.png"},
         {id: 11, name: "James Richards", team: "Senior Support Engineer", photo: "static/images/avatars/jamesR1.png"},
-        {id: 12, name: "James Russell", team: "Developer", photo: "static/images/avatars/JamesR2.png"},
+        {id: 12, name: "James Russell", team: "Developer", photo: "static/images/avatars/jamesR2.png"},
         {id: 13, name: "Ben Crothers", team: "Fabulous", photo: "static/images/avatars/ben.png"},
         {id: 14, name: "Daniel Franz", team: "Principal Product Manager", photo: "static/images/avatars/daniel.png"},
         {id: 15, name: "Christopher Nortje", team: "Development Team Lead", photo: "static/images/avatars/christopher.png"},
