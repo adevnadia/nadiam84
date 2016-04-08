@@ -389,6 +389,16 @@ img {
   color: #3572b0;
   margin: 0;
 }
+.aui-avatar {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */
+}
 .aui-avatar.pending img {
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
