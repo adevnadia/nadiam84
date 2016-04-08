@@ -40,7 +40,7 @@
 
                             <!-- in a "Tier One" Sidebar group, AUI Nav heading is ignored, and each nav item's label will be used
                                  as the tooltip text instead -->
-                            <div class="aui-nav-heading" title="Stuff">
+                            <div class="aui-nav-heading aui-nav-heading-c" title="Stuff">
                                 <strong>Team members</strong>
 
                             </div>
@@ -48,28 +48,27 @@
                             <div class="aui-c-addedpeople">
                                 <ul>
                                   <li ng-repeat="mate in model.savedTeam track by $index" ng-show="!mate.pending">
-                                      <span class="aui-avatar aui-avatar-project aui-avatar-small animated zoomIn" ng-click="toggleMate(mate)">
+                                      <span class="aui-avatar aui-avatar-project aui-avatar-medium animated zoomIn" ng-click="toggleMate(mate)">
                                             <span class="aui-avatar-inner">
                                                 <img ng-src="{{mate.photo}}">
                                             </span>
                                         </span>
                                   </li>
                                   <li>
-                                      <span class="aui-c-addbutton" ng-click="openPopup()">
-                                        <i class="fa fa-plus-circle"></i>
-                                    </span>
+                                      <span class="aui-c-addbutton" ng-click="openPopup()"></span>
                                   </li>
                                 </ul>
                             </div>
 
-                            <div class="aui-nav-heading" title="Stuff">
+                            <div class="aui-nav-heading aui-nav-heading-c" title="Stuff">
                                 <strong>Pending invites</strong>
                             </div>
 
                             <div class="aui-c-addedpeople">
-                                <ul>
+                                <h3 class="nothing" ng-if="model.savedTeam.length < 1">You haven't invited anyone yet</h3>
+                                <ul ng-if="model.savedTeam.length">
                                     <li ng-repeat="mate in model.savedTeam track by $index" ng-show="mate.pending">
-                                        <span class="aui-avatar aui-avatar-project aui-avatar-small animated zoomIn pending" ng-click="toggleMate(mate)">
+                                        <span class="aui-avatar aui-avatar-project aui-avatar-medium animated zoomIn pending" ng-click="toggleMate(mate)">
                                             <span class="aui-avatar-inner">
                                                 <img ng-src="{{mate.photo}}">
                                             </span>
@@ -98,7 +97,7 @@
     <!-- popup -->
     <div class="aui-c-popup" ng-show="ui.openPopup">
         <div class="shadow" ng-click="closePopup()"></div>
-        <div class="body  animated slideInLeft" ng-class="{'slideOutRightAui' : ui.closePopupAnimation}">
+        <div class="body  animated fadeInUp" ng-class="{'fadeOutUp' : ui.closePopupAnimation}">
             <div class="close-but" ng-click="closePopup()"></div>
 
             <div class="aui-c-head">

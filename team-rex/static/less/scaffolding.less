@@ -62,9 +62,12 @@ img {
 
 .aui-c-addbutton {
   float: right;
-  font-size: 20px;
   cursor: pointer;
-  margin: -8px 0px 0px 0px;
+  width:34px;
+  height:34px;
+  background:url(../images/invite.png) 0 0 no-repeat;
+  background-size:100% 100%;
+  display:inline-block;
 }
 
 .aui-c-popup {
@@ -105,6 +108,7 @@ img {
       width:35px;
       height:35px;
       background:url(../images/close.png) 50% 50% no-repeat;
+      background-size:15px 15px;
       cursor:pointer;
       z-index:9999;
     }
@@ -207,6 +211,12 @@ img {
     background: url(../images/add.png) 0 0 no-repeat;
     cursor: pointer;
     margin-top: 7px;
+    background-size:100% 100%;
+
+    &:hover {
+      background: url(../images/add-hover.png) 0 0 no-repeat;
+      background-size:100% 100%;
+    }
 
     &.chosen {
       background-image: url(../images/tick.png);
@@ -245,7 +255,8 @@ img {
   right: -5px;
   width: 22px;
   height: 22px;
-  background: url(../images/Tick-smal.png) 0 0 no-repeat;
+  background: url(../images/tick-small.png) 0 0 no-repeat;
+  background-size:100% 100%;
 }
 
 .aui-c-slider {
@@ -286,14 +297,23 @@ img {
 .aui-c-addedpeople {
   ul {
     padding: 0;
-    margin: 0 0 0 10px;
+    margin: 0 0 18px 10px;
     list-style-type: none;
 
     li {
       display: inline-block;
       vertical-align: middle;
-      margin: 0 5px 0 0;
+      margin: 0 5px 8px 0;
     }
+  }
+
+  .nothing {
+    padding:0px 10px;
+    margin:0;
+    font-size:14px;
+    line-height:14px;
+    font-weight:normal;
+    color:#707070;
   }
 }
 
@@ -307,4 +327,8 @@ img {
   line-height: 50px;
   font-weight: normal !important;
   padding: 0 35px;
+}
+
+.aui-nav-heading-c {
+  padding:16px 10px !important;
 }
