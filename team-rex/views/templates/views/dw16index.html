@@ -10,37 +10,14 @@
                 <nav class="aui-navgroup aui-navgroup-vertical">
                     <div class="aui-navgroup-inner">
 
-                        <!-- A Sidebar group will collapse into a single trigger icon when sidebar is collapsed -->
-                        <!-- The 'actions' sidebar group type will be styled differently from normal groups when sidebar is collapsed -->
-                        <div class="aui-sidebar-group aui-sidebar-group-actions">
-
-                            <!-- the AUI Nav heading will be used as the tooltip text -->
-                            <div class="aui-nav-heading" title="Actions">
-                                <strong>Actions</strong>
-                            </div>
-
-                            <!-- If a sidebar group does not have a nav heading, then the aui-nav's title attribute will be used
-                                 for the tooltip for the group -->
-                            <ul class="aui-nav" title="Page actions">
-                                <li>
-                                    <a class="aui-nav-item" href="#" title="Edit">Edit</a>
-                                </li>
-                                <li>
-                                    <a class="aui-nav-item" href="#" title="View">View</a>
-                                </li>
-                                <li>
-                                    <a class="aui-nav-item" href="#" title="Share">Share</a>
-                                </li>
-                            </ul>
-                        </div>
-
+                        <div class="sidebar-pic"><img src="static/images/sidebar.png" width="100%"></div>
                         <!-- A "Tier One" Sidebar group will display all of its nav items, but all nav items MUST have an AUI Icon
                              which will be used when the sidebar is collapsed -->
                         <div class="aui-sidebar-group aui-sidebar-group-tier-one">
 
                             <!-- in a "Tier One" Sidebar group, AUI Nav heading is ignored, and each nav item's label will be used
                                  as the tooltip text instead -->
-                            <div class="aui-nav-heading aui-nav-heading-c" title="Stuff">
+                            <div class="aui-nav-heading aui-nav-heading-c" title="Stuff" style="border-top:0 !important;">
                                 <strong>Team members</strong>
 
                             </div>
@@ -55,16 +32,20 @@
                                         </span>
                                   </li>
                                   <li>
-                                      <span class="aui-c-addbutton" ng-click="openPopup()"></span>
+                                      <span class="aui-avatar aui-avatar-project aui-avatar-medium" ng-click="openPopup()">
+                                            <span class="aui-avatar-inner">
+                                                <img ng-src="static/images/invite.png">
+                                            </span>
+                                        </span>
                                   </li>
                                 </ul>
                             </div>
 
-                            <div class="aui-nav-heading aui-nav-heading-c" title="Stuff">
+                            <div class="aui-nav-heading aui-nav-heading-c" title="Stuff" style="border-top:0 !important; padding-top:0px !important;">
                                 <strong>Pending invites</strong>
                             </div>
 
-                            <div class="aui-c-addedpeople">
+                            <div class="aui-c-addedpeople" style="margin-bottom:30px;">
                                 <h3 class="nothing" ng-if="model.savedTeam.length < 1">You haven't invited anyone yet</h3>
                                 <ul ng-if="model.savedTeam.length">
                                     <li ng-repeat="mate in model.savedTeam track by $index" ng-show="mate.pending">
@@ -96,7 +77,7 @@
 
     <!-- popup -->
     <div class="aui-c-popup" ng-show="ui.openPopup">
-        <div class="shadow" ng-click="closePopup()"></div>
+        <div class="shadow animated fadeInAui"  ng-class="{'fadeOutAui' : ui.closePopupAnimation}" ng-click="closePopup()"></div>
         <div class="body  animated fadeInUp" ng-class="{'fadeOutUp' : ui.closePopupAnimation}">
             <div class="close-but" ng-click="closePopup()"></div>
 

@@ -91,6 +91,9 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
             $scope.model.savedTeam[i].isChosen = false;
             $scope.model.savedTeam[i].rePending = false;
         }
+
+        shuffle($scope.model.savedTeam);
+
         $scope.closePopup();
     };
 
@@ -187,16 +190,36 @@ app.controller('SampleController', ['$scope', '$timeout', function ($scope, $tim
     function setRandom() {
         if (!interval) {
             interval = setInterval(function () {
+                var numberPendings = 0;
                 for (var i = 0; i < $scope.model.savedTeam.length; i++) {
                     if ($scope.model.savedTeam[i].pending) {
+                        numberPendings++;
+                    }
+                }
+
+                for (var i = 0; i < $scope.model.savedTeam.length; i++) {
+                    if ($scope.model.savedTeam[i].pending && (numberPendings > 2)) {
                         $scope.model.savedTeam[i].pending = false;
                         $scope.$apply();
+                        numberPendings--;
                         break;
                     }
                 }
 
             }, 2000);
         }
+    }
+
+    function shuffle(a) {
+        var j, x, i;
+        for (i = a.length; i; i -= 1) {
+            j = Math.floor(Math.random() * i);
+            x = a[i - 1];
+            a[i - 1] = a[j];
+            a[j] = x;
+        }
+
+        return a;
     }
 
     function stopRandom() {

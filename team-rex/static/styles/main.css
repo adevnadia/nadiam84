@@ -305,6 +305,9 @@ img {
   color: #333;
   background: url(../images/Search.png) 14px 16px no-repeat;
 }
+.aui-c-search input:focus {
+  outline: 0;
+}
 .aui-c-head {
   position: absolute;
   top: 40px;
@@ -430,7 +433,7 @@ img {
 }
 .aui-c-addedpeople ul {
   padding: 0;
-  margin: 0 0 18px 10px;
+  margin: 0 20px 18px 20px;
   list-style-type: none;
 }
 .aui-c-addedpeople ul li {
@@ -439,7 +442,7 @@ img {
   margin: 0 5px 8px 0;
 }
 .aui-c-addedpeople .nothing {
-  padding: 0px 10px;
+  padding: 0px 20px;
   margin: 0;
   font-size: 14px;
   line-height: 14px;
@@ -458,5 +461,5 @@ img {
   padding: 0 35px;
 }
 .aui-nav-heading-c {
-  padding: 16px 10px !important;
+  padding: 16px 20px !important;
 }

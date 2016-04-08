@@ -1240,6 +1240,33 @@
   animation-name: fadeIn;
 }
 
+@-webkit-keyframes fadeInAui {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fadeInAui {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
+
+.fadeInAui {
+  -webkit-animation-name: fadeInAui;
+  animation-name: fadeInAui;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+}
+
 @-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
@@ -1469,6 +1496,8 @@
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
 }
 
 @-webkit-keyframes fadeInUpBig {
@@ -1527,6 +1556,31 @@
 .fadeOut {
   -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
+}
+
+@-webkit-keyframes fadeOutAui {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutAui {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOutAui {
+  -webkit-animation-name: fadeOutAui;
+  animation-name: fadeOutAui;
 }
 
 @-webkit-keyframes fadeOutDown {
@@ -1730,6 +1784,8 @@
 .fadeOutUp {
   -webkit-animation-name: fadeOutUp;
   animation-name: fadeOutUp;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
 }
 
 @-webkit-keyframes fadeOutUpBig {
